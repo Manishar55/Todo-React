@@ -2,14 +2,15 @@ import { useState } from "react";
 
 function AddTodo({addTodos}){
 
-    const[todoText, setTodoText]=useState("");
+    const[todoText, setTodoText]=useState('');
 
     return(
         <>
             <input  placeholder="Add a new todo..."
             onChange={(e)=>setTodoText(e.target.value)}
+            value={todoText}
             
-            ></input>
+            />
             <button onClick={()=>{
                 addTodos(todoText);
                 setTodoText('');
